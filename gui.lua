@@ -1,6 +1,6 @@
 
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("Visualsettings", "~b~FUCK")
+mainMenu = NativeUI.CreateMenu("Visualsettings", "~b~Visualsettings Selector")
 _menuPool:Add(mainMenu)
 	_menuPool:ControlDisablingEnabled(false)
 	_menuPool:MouseControlsEnabled(false)
@@ -15,15 +15,14 @@ Citizen.CreateThread(function()
 			end
 		end
 		if file.label then
-			local newitem = NativeUI.CreateItem(file.label, files[i].active, "Dicks?")
+			local newitem = NativeUI.CreateItem(file.label, "","")
 			file.item = newitem
 			mainMenu:AddItem(newitem)
 			newitem.Activated = function(ParentMenu,SelectedItem)
 				printLoading = true
-				if file.item ~= GetDefaultVisualsettingsFile() then
+				if file.file ~= GetDefaultVisualsettingsFile() then -- load default settings file
 					LoadVisualsettingsFile(GetDefaultVisualsettingsFile())
 					Wait(3000)
-					print(file.file)
 				end
 				LoadVisualsettingsFile(file.file)
 				printLoading = false

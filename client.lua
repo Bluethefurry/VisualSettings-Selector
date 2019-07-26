@@ -56,7 +56,7 @@ function LoadVisualsettingsFile(file)
 	local settingsFile = LoadResourceFile(GetCurrentResourceName(), file)
 
 	local lines = stringsplit(settingsFile, "\n")
-
+	print("Loading "..file)
 	for k,v in ipairs(lines) do
 		if not starts_with(v, '#') and not starts_with(v, '//') and (v ~= "" or v ~= " ") and #v > 1 then
 			v = v:gsub("%s+", " ")
