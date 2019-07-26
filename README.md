@@ -1,4 +1,4 @@
-# VisualSettings
-'Stream' visualsettings.dat from server to client
+# VisualSettings-Selector
+'Stream' Multiple visualsettings.dat from server to client, with a Selection GUI
 
-Make sure to rename the resource to VisualSettings.
+
