@@ -1,20 +1,5 @@
-files = {
-	{file = "default.dat", label = "Default", default = true}, 
-	-- make sure to also add these in the __resource.lua
-	-- file = filename incl. folder path, if any, default = "reset to default" button will reset it to that file
-	-- always update the default.dat file in case of game updates
-	-- set = gets set automatically when joining
+batchSize = 8
 
-	{file = "visualv.dat", label = "VisualV", set = false}, -- visuallv file.
-	{file = "blu.dat", label = "Example 1", set = false}, -- blü's visualsettings
-	{file = "els.dat", label = "ELS", set = true}, -- blü's visualsettings
-
-}
-
-
-for i,file in ipairs(files) do
-	file.file = "files/"..file.file 
-end
 
 
 function stringsplit(inputstr, sep)
@@ -67,7 +52,7 @@ function LoadVisualsettingsFile(file)
 			if setting[1] ~= nil and setting[2] ~= nil and tonumber(setting[2]) ~= nil then
 				if setting[1] ~= 'weather.CycleDuration' then	
 					Citizen.InvokeNative(GetHashKey('SET_VISUAL_SETTING_FLOAT') & 0xFFFFFFFF, setting[1], tonumber(setting[2])+.0)
-					if processedbatch == 10 then
+					if processedbatch == batchSize then
 						processedbatch = 0
 						Wait(0)
 					else

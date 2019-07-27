@@ -7,6 +7,7 @@
 - Optimisation
 - make gui nicer
 - cleanlyness
+- nicer way to add new visualsettings
 
 ## Issues
 - loading always resets to default before applying new timecyc, for compatibility, has optimisation potential

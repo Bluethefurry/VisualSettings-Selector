@@ -5,6 +5,9 @@ _menuPool:Add(mainMenu)
 	_menuPool:ControlDisablingEnabled(false)
 	_menuPool:MouseControlsEnabled(false)
 
+
+local Batches = {1,3,5,8,10,13,15}
+
 Citizen.CreateThread(function()
 	for i, file in ipairs(files) do
 		if not files[i].active then
@@ -28,6 +31,12 @@ Citizen.CreateThread(function()
 				printLoading = false
 			end
 		end
+	end
+	local newitem = NativeUI.CreateSliderItem("Loading Batch Size", Batches, 4, "Size of Batches during Loading, Bigger = Faster & Laggier, Smaller = Slower & Smoother", "true")
+	mainMenu:AddItem(newitem)
+	newitem.OnSliderChanged = function(_,_,index)
+		batchSize = Batches[index]
+		print(Batches[index])
 	end
 	_menuPool:RefreshIndex()
 	while true do

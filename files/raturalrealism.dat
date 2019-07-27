@@ -26,27 +26,27 @@ raincollision.waterspeed	1.00
 
 
 #Values for rain GPU particle effect
-rain.NumberParticles	16384
+rain.NumberParticles	65536
 rain.UseLitShader	1.00
 # rain.gravity	0.00	0.00	-0.98
 rain.gravity.x	0.00
 rain.gravity.y	0.00
 rain.gravity.z	-0.98
-rain.fadeInScale	2.00
+rain.fadeInScale	5.00
 rain.diffuse	1.00
 rain.ambient	0.40
 rain.wrapScale	0.60
 rain.wrapBias	0.40
 # rain.defaultlight	1.00	1.00	1.00
-rain.defaultlight.red	1.00
-rain.defaultlight.green	1.00
+rain.defaultlight.red	0.95
+rain.defaultlight.green	0.95
 rain.defaultlight.blue	1.00
-rain.defaultlight.alpha	16.00
+rain.defaultlight.alpha	8.00
 
 #General weather configuration
-weather.CycleDuration 120
+weather.CycleDuration 180
 weather.ChangeCloudOnSameCloudTypeChance 0.5
-weather.ChangeCloudOnSameWeatherTypeChance 0.5
+weather.ChangeCloudOnSameWeatherTypeChance 0.2
 
 #Config for static values for skyhat
 sky.sun.centreStart	0.98
@@ -69,16 +69,16 @@ shadows.cloudtexture.rangemax	1.00
 car.interiorlight.color.red	1.00
 car.interiorlight.color.green	1.00
 car.interiorlight.color.blue	0.70
-car.interiorlight.intensity	1.50
+car.interiorlight.intensity	3.00
 car.interiorlight.radius	2.10
 car.interiorlight.innerConeAngle	0.00
 car.interiorlight.outerConeAngle	90.00
 car.interiorlight.day.emissive.on	0.00
-car.interiorlight.night.emissive.on	0.20
+car.interiorlight.night.emissive.on	0.00
 car.interiorlight.day.emissive.off	0.00
 car.interiorlight.night.emissive.off	0.00
 car.interiorlight.coronaHDR 1.00
-car.interiorlight.coronaSize 1.35
+car.interiorlight.coronaSize 1.00
 
 # car.fatinteriorlight.color	1.00	1.00	0.70
 car.fatinteriorlight.color.red	1.00
@@ -109,11 +109,12 @@ car.redinteriorlight.day.emissive.off	0.00
 car.redinteriorlight.night.emissive.off	0.00
 car.redinteriorlight.coronaHDR 1.00
 car.redinteriorlight.coronaSize 1.00
+
 car.platelight.color.red	        1.00
 car.platelight.color.green	        1.00
 car.platelight.color.blue	        1.00
-car.platelight.intensity	        0.90
-car.platelight.radius	            1.10
+car.platelight.intensity	        0.50
+car.platelight.radius	            0.90
 car.platelight.innerConeAngle	    0.00
 car.platelight.outerConeAngle	    90.00
 car.platelight.day.emissive.on	    0.00
@@ -127,7 +128,7 @@ car.platelight.falloffExp		64
 car.dashlight.color.red	            1.00
 car.dashlight.color.green	        0.85
 car.dashlight.color.blue	        0.60
-car.dashlight.intensity	            0.55
+car.dashlight.intensity	            0.04
 car.dashlight.radius	            1.50
 car.dashlight.innerConeAngle	    0.00
 car.dashlight.outerConeAngle	    90.00
@@ -142,8 +143,8 @@ car.dashlight.falloffExp		4
 car.doorlight.color.red	            1.00
 car.doorlight.color.green	        0.85
 car.doorlight.color.blue	        0.95
-car.doorlight.intensity	            0.20
-car.doorlight.radius	            1.13
+car.doorlight.intensity	            0.10
+car.doorlight.radius	            1.10
 car.doorlight.innerConeAngle	    0.00
 car.doorlight.outerConeAngle	    90.00
 car.doorlight.day.emissive.on	    0.00
@@ -158,50 +159,52 @@ car.doorlight.falloffExp		4
 car.taxi.color.red	1.00
 car.taxi.color.green	1.00
 car.taxi.color.blue	0.60
-car.taxi.intensity	1.90
-car.taxi.radius	0.90
+car.taxi.intensity	1.75
+car.taxi.radius	1.60
 car.taxi.innerConeAngle	0.50
 car.taxi.outerConeAngle	1.00
-car.taxi.coronaHDR 1.35
+car.taxi.coronaHDR 1.00
 car.taxi.coronaSize 1.00
 
 car.neon.defaultcolor.red	1.00
 car.neon.defaultcolor.green	0.00
 car.neon.defaultcolor.blue	1.00
-car.neon.intensity	19.0
-car.neon.radius	1.6
-car.neon.falloffexponent 128.0
+car.neon.intensity	384.0
+car.neon.radius	1.7
+car.neon.falloffexponent 2048.0
 car.neon.capsuleextent.sides 1.2
 car.neon.capsuleextent.frontback 0.6
 car.neon.clipplaneheight -0.014
+car.neon.bikeclipplaneheight 0.25
 
-car.headlights.angle	-0.7
-car.headlights.split	0.0
-car.headlights.global.HeadlightIntensityMult	5.8
-car.headlights.global.HeadlightDistMult	1.55
-car.headlights.global.ConeInnerAngleMod	1.0
-car.headlights.global.ConeOuterAngleMod	1.0
-car.headlights.global.OnlyOneLightMod	1.0
-car.headlights.global.Fake2LightsAngleMod	0.95
+car.headlights.angle					-0.57
+car.headlights.split					0.0
+car.headlights.global.HeadlightIntensityMult		1.00
+car.headlights.global.HeadlightDistMult			5.05
+car.headlights.global.ConeInnerAngleMod			1.00
+car.headlights.global.ConeOuterAngleMod			1.05
+car.headlights.global.OnlyOneLightMod			0.98
+car.headlights.global.Fake2LightsAngleMod		0.95
 car.headlights.global.Fake2LightsDisplacementMod	0.17
-car.headlights.submarine.Fake2LightsAngleMod 0.830
+car.headlights.submarine.Fake2LightsAngleMod 		0.830
 car.headlights.submarine.Fake2LightsDisplacementMod	0.0
-car.headlights.fullbeam.IntensityMult	1.8
-car.headlights.fullbeam.DistMult	1.6
-car.headlights.fullbeam.CoronaIntensityMult	8.0
-car.headlights.fullbeam.CoronaSizeMult	4.0
-car.headlights.aim.fullbeam.mod	0.0
-car.headlights.aim.dippedbeam.mod	-0.2
-car.headlights.aim.fullbeam.angle	0.0
-car.headlights.aim.dipeedbeam.angle	0.0
-car.headlights.player.intensitymult	1.5
-car.headlights.player.distmult	1.5
-car.headlights.player.exponentmult	3.0
+car.headlights.fullbeam.IntensityMult			1.0
+car.headlights.fullbeam.DistMult			1.0
+car.headlights.fullbeam.CoronaIntensityMult		1.1
+car.headlights.fullbeam.CoronaSizeMult			1.3
+car.headlights.aim.fullbeam.mod				0.0
+car.headlights.aim.dippedbeam.mod			-0.4
+car.headlights.aim.fullbeam.angle			0.0
+car.headlights.aim.dipeedbeam.angle			0.0
+car.headlights.player.intensitymult			1.0
+car.headlights.player.distmult				0.6
+car.headlights.player.exponentmult			8.0
+car.headlights.useDynamicShadows			0.0
 
 # car headlight volume lights data
-car.headlights.volume.intensityscale	0.020
-car.headlights.volume.sizescale		1.55
-car.headlights.volume.outerintensity	0.08
+car.headlights.volume.intensityscale	0.005
+car.headlights.volume.sizescale		1.0
+car.headlights.volume.outerintensity	0.0
 car.headlights.volume.outerexponent	50.0
 # car.headlights.volume.outerVolumeColor
 car.headlights.volume.outerVolumeColor.red	0.00
@@ -209,14 +212,14 @@ car.headlights.volume.outerVolumeColor.green	0.00
 car.headlights.volume.outerVolumeColor.blue	0.00
 
 car.coronas.MainFadeRatio	0.25
-car.coronas.BeginStart	85.0
+car.coronas.BeginStart	30.0
 car.coronas.BeginEnd	300.0
 car.coronas.CutoffStart	290.0
-car.coronas.CutoffEnd	320.0
+car.coronas.CutoffEnd	300.0
 car.coronas.underwaterFade		0.4
 
-car.sirens.SpecularFade	15.0
-car.sirens.ShadowFade 15.0
+car.sirens.SpecularFade	30.0
+car.sirens.ShadowFade 30.0
 
 # heli poslight
 heli.poslight.nearStrength	20.0
@@ -242,7 +245,7 @@ heli.whiteheadlight.nearSize	0.25
 heli.whiteheadlight.farSize	2.00
 heli.whiteheadlight.intensity	4.0
 heli.whiteheadlight.radius	2.5
-.0
+
 # heli.whiteheadlight.color	1.00	0.00	0.00
 heli.whiteheadlight.color.red	1.00
 heli.whiteheadlight.color.green	1.00
@@ -253,7 +256,7 @@ heli.whitetaillight.nearStrength	15.0
 heli.whitetaillight.farStrength	60.0
 heli.whitetaillight.nearSize	0.25
 heli.whitetaillight.farSize	2.00
-heli.whitetaillight.intensity	8.0
+heli.whitetaillight.intensity	4.0
 heli.whitetaillight.radius	2.5
 # heli.whitetaillight.color	1.00	0.00	0.00
 heli.whitetaillight.color.red	1.00
@@ -298,7 +301,7 @@ plane.whiteheadlight.nearStrength	1.0
 plane.whiteheadlight.farStrength	10.0
 plane.whiteheadlight.nearSize	1.25
 plane.whiteheadlight.farSize	15
-plane.whiteheadlight.intensity	8.0
+plane.whiteheadlight.intensity	4.0
 plane.whiteheadlight.radius	1.75
 
 # plane.whiteheadlight.color	1.00	0.00	0.00
@@ -436,25 +439,25 @@ boat.corona.size	4.0
 boat.corona.intensity	1.0
 boat.corona.zBias	0.02
 
-sub.lightOne.color.red	1.00
-sub.lightOne.color.green	1.00
+sub.lightOne.color.red	0.10
+sub.lightOne.color.green	0.30
 sub.lightOne.color.blue	1.00
-sub.lightOne.intensity	0.00
-sub.lightOne.radius	1.00
+sub.lightOne.intensity	32.00
+sub.lightOne.radius	3.00
 sub.lightOne.falloffExp 8.0
 sub.lightOne.innerConeAngle	0.00
-sub.lightOne.outerConeAngle	45.00
+sub.lightOne.outerConeAngle	89.00
 sub.lightOne.coronaHDR 0.00
 sub.lightOne.coronaSize 0.00
 
-sub.lightTwo.color.red	1.00
+sub.lightTwo.color.red	0.20
 sub.lightTwo.color.green	1.00
-sub.lightTwo.color.blue	1.00
-sub.lightTwo.intensity	0.00
-sub.lightTwo.radius	1.00
+sub.lightTwo.color.blue	0.50
+sub.lightTwo.intensity	32.00
+sub.lightTwo.radius	2.00
 sub.lightTwo.falloffExp 8.0
 sub.lightTwo.innerConeAngle	0.00
-sub.lightTwo.outerConeAngle	45.00
+sub.lightTwo.outerConeAngle	89.00
 sub.lightTwo.coronaHDR 0.00
 sub.lightTwo.coronaSize 0.00
 
@@ -462,67 +465,67 @@ sub.lightTwo.coronaSize 0.00
 train.light.r				1.0
 train.light.g				1.0
 train.light.b				0.8
-train.light.intensity			3
+train.light.intensity			5.0
 train.light.falloffmax			2.1
-train.light.fadingdistance		100.0
+train.light.fadingdistance		256.0
 train.light.fadelength			10.0
-train.ambientvolume.intensityscaler	2.0
+train.ambientvolume.intensityscaler	1.0
 
 
 
 # emissive bits
-car.headlight.day.emissive.on	10.00
-car.headlight.night.emissive.on	20.00
-car.headlight.day.emissive.off	0.05
+car.headlight.day.emissive.on		20.00
+car.headlight.night.emissive.on		20.00
+car.headlight.day.emissive.off		0.05
 car.headlight.night.emissive.off	0.001
-car.taillight.day.emissive.on	40.0
-car.taillight.night.emissive.on	25.0
-car.taillight.day.emissive.off	0.30
+car.taillight.day.emissive.on		25.0
+car.taillight.night.emissive.on		25.0
+car.taillight.day.emissive.off		0.30
 car.taillight.night.emissive.off	0.003
-car.indicator.day.emissive.on	20.00
-car.indicator.night.emissive.on	20.00
-car.indicator.day.emissive.off	0.30
-car.indicator.night.emissive.off	0.003
+car.indicator.day.emissive.on		10.00
+car.indicator.night.emissive.on		10.00
+car.indicator.day.emissive.off		0.30
+car.indicator.night.emissive.off	0.001
 car.reversinglight.day.emissive.on	20.00
-car.reversinglight.night.emissive.on	6.00
+car.reversinglight.night.emissive.on	3.00
 car.reversinglight.day.emissive.off	0.10
-car.reversinglight.night.emissive.off	0.003
-car.defaultlight.day.emissive.on	1.80
-car.defaultlight.night.emissive.on	2.50
+car.reversinglight.night.emissive.off	0.001
+car.defaultlight.day.emissive.on	1.50
+car.defaultlight.night.emissive.on	1.50
 car.defaultlight.day.emissive.off	0.05
 car.defaultlight.night.emissive.off	0.003
-car.brakelight.day.emissive.on	45.00
-car.brakelight.night.emissive.on	45.00
-car.brakelight.day.emissive.off	0.30
-car.brakelight.night.emissive.off	0.003
+car.brakelight.day.emissive.on		30.00
+car.brakelight.night.emissive.on	30.00
+car.brakelight.day.emissive.off		0.30
+car.brakelight.night.emissive.off	0.001
 car.middlebrakelight.day.emissive.on	30.00
 car.middlebrakelight.night.emissive.on	30.00
 car.middlebrakelight.day.emissive.off	0.30
-car.middlebrakelight.night.emissive.off	0.003
-car.extralight.day.emissive.on	12.00
-car.extralight.night.emissive.on	13.00
-car.extralight.day.emissive.off	0.001
+car.middlebrakelight.night.emissive.off	0.001
+car.extralight.day.emissive.on		9.00
+car.extralight.night.emissive.on	9.00
+car.extralight.day.emissive.off		0.001
 car.extralight.night.emissive.off	0.05
-car.emissiveMultiplier 2.00
+car.emissiveMultiplier 			2.00
 
 # Lod distances for vehicles
-car.lod.distance.high	40.00
-car.lod.distance.low	180.00
+car.lod.distance.high	128.00
+car.lod.distance.low	512.00
 
 # search lights...
-defaultsearchlight.length	100.0
+defaultsearchlight.length	150.0
 defaultsearchlight.offset	-0.13
 defaultsearchlight.color.red	0.030
 defaultsearchlight.color.green	0.030
-defaultsearchlight.color.blue	0.030
+defaultsearchlight.color.blue	0.035
 defaultsearchlight.mainLightInfo.falloffScale	2.0
-defaultsearchlight.mainLightInfo.falloffExp	8.0
+defaultsearchlight.mainLightInfo.falloffExp	4.0
 defaultsearchlight.mainLightInfo.innerAngle	0.0
-defaultsearchlight.mainLightInfo.outerAngle	5.0
-defaultsearchlight.mainLightInfo.globalIntensity	4.0
+defaultsearchlight.mainLightInfo.outerAngle	9.0
+defaultsearchlight.mainLightInfo.globalIntensity	16.0
 defaultsearchlight.mainLightInfo.lightIntensityScale	10.0
-defaultsearchlight.mainLightInfo.volumeIntensityScale	0.125
-defaultsearchlight.mainLightInfo.volumeSizeScale	0.6
+defaultsearchlight.mainLightInfo.volumeIntensityScale	0.150
+defaultsearchlight.mainLightInfo.volumeSizeScale	0.75
 defaultsearchlight.mainLightInfo.outerVolumeColor.color.red	0.0
 defaultsearchlight.mainLightInfo.outerVolumeColor.color.green	0.0
 defaultsearchlight.mainLightInfo.outerVolumeColor.color.blue	0.0
@@ -532,27 +535,27 @@ defaultsearchlight.mainLightInfo.enable	1.0
 defaultsearchlight.mainLightInfo.specular	1.0
 defaultsearchlight.mainLightInfo.shadow	1.0
 defaultsearchlight.mainLightInfo.volume	1.0
-defaultsearchlight.mainLightInfo.coronaIntensity	6.0
-defaultsearchlight.mainLightInfo.coronaIntensityFar	12.0
+defaultsearchlight.mainLightInfo.coronaIntensity	15.0
+defaultsearchlight.mainLightInfo.coronaIntensityFar	7.5
 defaultsearchlight.mainLightInfo.coronaSize	3.5
 defaultsearchlight.mainLightInfo.coronaSizeFar	35.0
 defaultsearchlight.mainLightInfo.coronaZBias	0.3
 defaultsearchlight.mainLightInfo.coronaOffset	0.4
-defaultsearchlight.mainLightInfo.lightFadeDist	40.0
+defaultsearchlight.mainLightInfo.lightFadeDist	512.0
 
 helisearchlight.length	100.0
 helisearchlight.offset	-0.13
 helisearchlight.color.red	0.030
 helisearchlight.color.green	0.030
-helisearchlight.color.blue	0.030
+helisearchlight.color.blue	0.035
 helisearchlight.mainLightInfo.falloffScale	2.0
-helisearchlight.mainLightInfo.falloffExp	8.0
+helisearchlight.mainLightInfo.falloffExp	4.0
 helisearchlight.mainLightInfo.innerAngle	0.0
-helisearchlight.mainLightInfo.outerAngle	5.0
-helisearchlight.mainLightInfo.globalIntensity	4.0
+helisearchlight.mainLightInfo.outerAngle	9.0
+helisearchlight.mainLightInfo.globalIntensity	16.0
 helisearchlight.mainLightInfo.lightIntensityScale	10.0
-helisearchlight.mainLightInfo.volumeIntensityScale	0.125
-helisearchlight.mainLightInfo.volumeSizeScale	0.6
+helisearchlight.mainLightInfo.volumeIntensityScale	0.150
+helisearchlight.mainLightInfo.volumeSizeScale	0.5
 helisearchlight.mainLightInfo.outerVolumeColor.color.red	0.0
 helisearchlight.mainLightInfo.outerVolumeColor.color.green	0.0
 helisearchlight.mainLightInfo.outerVolumeColor.color.blue	0.0
@@ -568,7 +571,7 @@ helisearchlight.mainLightInfo.coronaSize	2.5
 helisearchlight.mainLightInfo.coronaSizeFar	35.0
 helisearchlight.mainLightInfo.coronaZBias	0.3
 helisearchlight.mainLightInfo.coronaOffset	0.4
-helisearchlight.mainLightInfo.lightFadeDist	40.0
+helisearchlight.mainLightInfo.lightFadeDist	512.0
 	
 boatsearchlight.length	100.0
 boatsearchlight.offset	-0.110
@@ -576,13 +579,13 @@ boatsearchlight.color.red	0.030
 boatsearchlight.color.green	0.030
 boatsearchlight.color.blue	0.030
 boatsearchlight.mainLightInfo.falloffScale	2.0
-boatsearchlight.mainLightInfo.falloffExp	8.0
+boatsearchlight.mainLightInfo.falloffExp	4.0
 boatsearchlight.mainLightInfo.innerAngle	0.0
 boatsearchlight.mainLightInfo.outerAngle	5.0
-boatsearchlight.mainLightInfo.globalIntensity	4.0
+boatsearchlight.mainLightInfo.globalIntensity	12.0
 boatsearchlight.mainLightInfo.lightIntensityScale	10.0
-boatsearchlight.mainLightInfo.volumeIntensityScale	0.125
-boatsearchlight.mainLightInfo.volumeSizeScale	0.7
+boatsearchlight.mainLightInfo.volumeIntensityScale	0.100
+boatsearchlight.mainLightInfo.volumeSizeScale	0.5
 boatsearchlight.mainLightInfo.outerVolumeColor.color.red	0.0
 boatsearchlight.mainLightInfo.outerVolumeColor.color.green	0.0
 boatsearchlight.mainLightInfo.outerVolumeColor.color.blue	0.0
@@ -592,13 +595,13 @@ boatsearchlight.mainLightInfo.enable	1.0
 boatsearchlight.mainLightInfo.specular	1.0
 boatsearchlight.mainLightInfo.shadow	1.0
 boatsearchlight.mainLightInfo.volume	1.0
-boatsearchlight.mainLightInfo.coronaIntensity	6.0
-boatsearchlight.mainLightInfo.coronaIntensityFar	12.0
+boatsearchlight.mainLightInfo.coronaIntensity	25.0
+boatsearchlight.mainLightInfo.coronaIntensityFar	12.5
 boatsearchlight.mainLightInfo.coronaSize	1.5
 boatsearchlight.mainLightInfo.coronaSizeFar	20.0
 boatsearchlight.mainLightInfo.coronaZBias	0.3
 boatsearchlight.mainLightInfo.coronaOffset	0.235
-boatsearchlight.mainLightInfo.lightFadeDist	40.0
+boatsearchlight.mainLightInfo.lightFadeDist	512.0
 
 #Config values for traffic lights
 # trafficLight.red.color	1.00	0.20	0.05
@@ -614,8 +617,8 @@ trafficLight.green.color.red	0.01
 trafficLight.green.color.green	1.00
 trafficLight.green.color.blue	0.135
 trafficLight.walk.color.red		1.0
-trafficLight.walk.color.green	1.0
-trafficLight.walk.color.blue	1.0
+trafficLight.walk.color.green		1.0
+trafficLight.walk.color.blue		1.0
 trafficLight.dontwalk.color.red		1.00
 trafficLight.dontwalk.color.green	0.003
 trafficLight.dontwalk.color.blue	0.0001
@@ -631,10 +634,10 @@ trafficLight.near.outerConeAngle	10.00
 trafficLight.near.coronaHDR		10.0
 trafficLight.near.coronaSize		1.5
 
-trafficLight.farFadeStart	100.0
-trafficLight.farFadeEnd	120.0
-trafficLight.nearFadeStart	30.0
-trafficLight.nearFadeEnd	35.0
+trafficLight.farFadeStart	236.0
+trafficLight.farFadeEnd		256.0
+trafficLight.nearFadeStart	90.0
+trafficLight.nearFadeEnd	95.0
 
 #Config values for Tree Imposters
 imposter.color.blendRange	54.00
@@ -656,11 +659,11 @@ imposter.shadow.amt2	64.00
 
 
 #Config values for peds
-ped.ambientvolume.maxstrength	1.000
-ped.ambientvolume.fadestart	16.000
-ped.ambientvolume.fadeend	20.000
+ped.ambientvolume.maxstrength	0.600
+ped.ambientvolume.fadestart	2.000
+ped.ambientvolume.fadeend	48.000
 ped.ambientvolume.baseintensity 0.000
-ped.incarAmbientScale 0.4
+ped.incarAmbientScale 0.0
 
 pedLight.color.red	1.000
 pedLight.color.green	1.000
@@ -679,7 +682,7 @@ pedLight.volumeColor.x 1.000
 pedLight.volumeColor.y 1.000
 pedLight.volumeColor.z 0.500
 pedLight.volumeColor.w 1.000
-pedlight.fade 20.000
+pedlight.fade 60.000
 pedlight.shadowFade 15.000
 pedlight.specularFade 10.000
 
@@ -700,16 +703,31 @@ pedFpsLight.volumeColor.x 1.000
 pedFpsLight.volumeColor.y 1.000
 pedFpsLight.volumeColor.z 0.500
 pedFpsLight.volumeColor.w 1.000
-pedFpslight.fade 20.000
+pedFpslight.fade 60.000
 pedFpslight.shadowFade 15.000
 pedFpslight.specularFade 10.000
 
+pedFootLight.color.red		1.000
+pedFootLight.color.green	1.000
+pedFootLight.color.blue		1.000
+pedFootLight.intensity		6.000
+pedFootLight.radius		0.15
+pedFootLight.capsuleLength	0.100
+pedFootLight.offset.x 		0.15
+pedFootLight.offset.y 		-0.075
+pedFootLight.offset.z		0.000
+pedFootLight.offset.w 		0.000
+pedFootLight.falloffExp		11.000
+pedFootLight.fade 		60.000
+pedFootLight.specularFade 	10.000
+
+
 # Lod distances for peds
-ped.lod.distance.high	25.00
-ped.lod.distance.medium	50.00
-ped.lod.distance.low	80.00
-pedincar.lod.distance.high	7.00
-pedincar.lod.distance.high.x64	15.00
+ped.lod.distance.high	30.00
+ped.lod.distance.medium	60.00
+ped.lod.distance.low	90.00
+pedincar.lod.distance.high	15.00
+pedincar.lod.distance.high.x64	30.00
 
 
 #Config Values for Camera Events	Val start	Val End	MB start	MB End
@@ -841,23 +859,23 @@ distantlights.streetlight.color.green	0.47
 distantlights.streetlight.color.blue	0.03
 
 # Emissive night values
-emissive.night.start.time		20
-emissive.night.end.time			6
+emissive.night.start.time		19
+emissive.night.end.time			7
 
 # Misc Values
-misc.DOFBlurMultiplier.HD	1
-misc.DOFBlurMultiplier.SD	0.5
+misc.DOFBlurMultiplier.HD	1.5
+misc.DOFBlurMultiplier.SD	1.0
 misc.Multiplier.heightStart	100
 misc.Multiplier.heightEnd	250.00
-misc.Multiplier.farClipMultiplier	1
-misc.Multiplier.nearFogMultiplier	1
+misc.Multiplier.farClipMultiplier	2
+misc.Multiplier.nearFogMultiplier	0.5
 misc.3dMarkers.FrontLightIntensity	10.00
 misc.3dMarkers.frontLightExponent	32
 
 # coronas
-misc.coronas.sizeScaleGlobal					0.75
-misc.coronas.intensityScaleGlobal				0.6
-misc.coronas.intensityScaleWater				0.5
+misc.coronas.sizeScaleGlobal					0.27
+misc.coronas.intensityScaleGlobal				0.33
+misc.coronas.intensityScaleWater				0.44
 misc.coronas.sizeScaleWater						0.5
 misc.coronas.sizeScaleParaboloid				1.0
 misc.coronas.screenspaceExpansion				0.0
@@ -873,7 +891,7 @@ misc.coronas.flareMinAngleDegToFadeIn			30.0
 misc.coronas.flareScreenCenterOffsetSizeMult	200.0
 misc.coronas.flareColShiftR						0.005
 misc.coronas.flareColShiftG						0.01
-misc.coronas.flareColShiftB						0.03
+misc.coronas.flareColShiftB						0.02
 misc.coronas.baseValueR							0.0
 misc.coronas.baseValueG							0.0
 misc.coronas.baseValueB							0.0
@@ -898,19 +916,19 @@ misc.coronas.screenEdgeMinDistForFade	0.95
 misc.BloomIntensityClamp.HD	10
 misc.BloomIntensityClamp.SD	10.00
 misc.CrossPMultiplier.RimLight	1.00
-misc.CrossPMultiplier.GlobalEnvironmentReflection	1.00
-misc.CrossPMultiplier.Gamma	1.00
+misc.CrossPMultiplier.GlobalEnvironmentReflection	4.00
+misc.CrossPMultiplier.Gamma	0.85
 misc.CrossPMultiplier.MidBlur	1.00
-misc.CrossPMultiplier.Farblur	1.00
-misc.CrossPMultiplier.SkyMultiplier	1.00
-misc.CrossPMultiplier.Desaturation 	1.00
-misc.HiDof.nearBlur	1
-misc.HiDof.midBlur	0.20
-misc.HiDof.farBlur	1.00
-misc.cutscene.nearBlurMin	0.2
+misc.CrossPMultiplier.Farblur	1.50
+misc.CrossPMultiplier.SkyMultiplier	0.93
+misc.CrossPMultiplier.Desaturation 	1.12
 misc.HiDof.nearBlur	1.00
-misc.HiDof.midBlur	0.20
-misc.HiDof.farBlur	1
+misc.HiDof.midBlur	0.50
+misc.HiDof.farBlur	2.00
+misc.cutscene.nearBlurMin	0.2
+misc.HiDof.nearBlur	1.50
+misc.HiDof.midBlur	1.00
+misc.HiDof.farBlur	2.00
 misc.cutscene.nearBlurMin	0.2
 misc.PedKillOverlay.duration 750.0f
 	
@@ -996,8 +1014,8 @@ seeThrough.ColorVisibleHot.green	0.99
 seeThrough.ColorVisibleHot.blue	1
 
 # Tonemapping
-Tonemapping.bright.filmic.A			0.22
-Tonemapping.bright.filmic.B			0.3
+Tonemapping.bright.filmic.A			0.25
+Tonemapping.bright.filmic.B			0.25
 Tonemapping.bright.filmic.C			0.10
 Tonemapping.bright.filmic.D			0.2
 Tonemapping.bright.filmic.E			0.01
@@ -1005,8 +1023,8 @@ Tonemapping.bright.filmic.F			0.3
 Tonemapping.bright.filmic.W			4.0
 Tonemapping.bright.filmic.exposure	-0.5
 
-Tonemapping.dark.filmic.A			0.22
-Tonemapping.dark.filmic.B			0.3
+Tonemapping.dark.filmic.A			0.25
+Tonemapping.dark.filmic.B			0.25
 Tonemapping.dark.filmic.C			0.10
 Tonemapping.dark.filmic.D			0.2
 Tonemapping.dark.filmic.E			0.0
@@ -1017,14 +1035,14 @@ Tonemapping.dark.filmic.exposure	3.0
 # Exposure
 Exposure.curve.scale	-106.200
 Exposure.curve.power	0.007
-Exposure.curve.offset	104.700
+Exposure.curve.offset	105.360
 
 # Adaptation
 Adaptation.min.step.size 	0.15
-Adaptation.max.step.size 	3.0
+Adaptation.max.step.size 	3.00
 Adaptation.step.size.mult 	1.5
 Adaptation.threshold 		0.0
-Adaptation.sun.exposure.tweak	-2
+Adaptation.sun.exposure.tweak	-2.2
 
 # Cloud generation
 cloudgen.frequency 				2.0
@@ -1035,18 +1053,18 @@ cloudgen.overlay.detail.scale	8.0
 # Cloud speeds
 cloud.speed.large	5.0
 cloud.speed.small	1.0
-cloud.speed.overall	1.0
+cloud.speed.overall	2.0
 cloud.speed.edge	1.0
 cloud.speed.hats	1.0
 
 # lod fade distances
-lod.fadedist.orphanhd	20.0
+lod.fadedist.orphanhd		20.0
 lod.fadedist.hd			20.0
 lod.fadedist.lod		20.0
-lod.fadedist.slod1		20.0
-lod.fadedist.slod2		25.0
-lod.fadedist.slod3		25.0
-lod.fadedist.slod4		25.0
+lod.fadedist.slod1		50.0
+lod.fadedist.slod2		50.0
+lod.fadedist.slod3		50.0
+lod.fadedist.slod4		50.0
 
 # sky plane
 skyplane.offset		512.0
@@ -1071,18 +1089,18 @@ lights.cutoff.distance					1000.0
 lights.cutoff.shadow.distance			1001.0
 lights.cutoff.specular.distance			1002.0
 lights.cutoff.volumetric.distance		1003.0
-lights.cutoff.nonGbuf.distance			75.0
+lights.cutoff.nonGbuf.distance			150.0
 lights.cutoff.map.distance				1004.0
 
 // Bloom
-bloom.threshold.min			0.4
+bloom.threshold.min			0.3
 bloom.threshold.expsoure.diff.min	0.0
 bloom.threshold.expsoure.diff.max	0.0
 bloom.threshold.power			1.0
 
-bloom.blurblendmult.large		0.5
-bloom.blurblendmult.med			2.0
-bloom.blurblendmult.small		1
+bloom.blurblendmult.large		0.6
+bloom.blurblendmult.med			2.1
+bloom.blurblendmult.small		1.1
 
 
 // Dynmaic bake paramaters
@@ -1134,25 +1152,25 @@ lodlight.sphere.expand.start		50.0
 lodlight.sphere.expand.end			500.0
 
 // Bright Lights
-misc.brightlight.distculled.FadeStart	60.0
-misc.brightlight.distculled.FadeEnd	80.0
-misc.brightlight.notdistculled.FadeStart	100.0
-misc.brightlight.notdistculled.FadeEnd	110.0
-misc.brightlight.globalIntensity	12.0
+misc.brightlight.distculled.FadeStart	120.0
+misc.brightlight.distculled.FadeEnd	160.0
+misc.brightlight.notdistculled.FadeStart	200.0
+misc.brightlight.notdistculled.FadeEnd	220.0
+misc.brightlight.globalIntensity	16.0
 misc.brightlight.railwayItensity	2.5
 misc.brightlight.coronaZBias	1.0
 
 // Vehicle Light Night/Day Settings
-vehicle.lights.sunrise			6.5
-vehicle.lights.sunset			20.0
+vehicle.lights.sunrise			7.0
+vehicle.lights.sunset			19.0
 
 // Vehicle light fade distances
-vehicle.lights.fadeDistance.main	80.0
-vehicle.lights.fadeDistance.secondary	40.0
-vehicle.lights.fadeDistance.sirens	220.0
-vehicle.lights.fadeDistance.AO	150.0
-vehicle.lights.fadeDistance.neon	80.0
-vehicle.lights.fadeLength	10.0
+vehicle.lights.fadeDistance.main	240.0
+vehicle.lights.fadeDistance.secondary	180.0
+vehicle.lights.fadeDistance.sirens	300.0
+vehicle.lights.fadeDistance.AO	300.0
+vehicle.lights.fadeDistance.neon	240.0
+vehicle.lights.fadeLength	30.0
 
 //Particle Shadow intensity
 particles.shadowintensity		0.5
@@ -1221,15 +1239,15 @@ ped.light.fade.night.end		20.0
 ped.phonelight.color.r			1.0
 ped.phonelight.color.g			1.0
 ped.phonelight.color.b			1.0
-ped.phonelight.intensity		4.0
+ped.phonelight.intensity		6.0
 ped.phonelight.radius			0.9
 ped.phonelight.falloffexp		15.0
 ped.phonelight.cone.inner		0.0
 ped.phonelight.cone.outer		90.0
 
 //Adaptive DOF - PC/NG Only
-adaptivedof.range.verynear			5
-adaptivedof.range.near				20
+adaptivedof.range.verynear			10
+adaptivedof.range.near				30
 adaptivedof.range.mid					1000
 adaptivedof.range.far					3000
 adaptivedof.range.veryfar				10000
@@ -1295,7 +1313,7 @@ adaptivedof.gridscalexaiming			0.01
 adaptivedof.gridscaleyaiming			0.01
 adaptivedof.gridscalexrungun			0.02
 adaptivedof.gridscaleyrungun			0.03
-adaptivedof.smoothtime				0.75
+adaptivedof.smoothtime				2.0
 adaptivedof.nearplayeradjust			4.5f
 
 adaptivedof.meleefocal.nearout		1.0
@@ -1318,11 +1336,11 @@ adaptivedof.incoverfocal.nearin				1.0
 adaptivedof.incoverfocal.farin				1.0
 adaptivedof.incoverfocal.farout				1.0
 
-adaptivedof.exposureDay				-2.0
-adaptivedof.exposureNight				1.0
+adaptivedof.exposureDay				-1.5
+adaptivedof.exposureNight				1.25
 
 adaptivedof.exposureMin				-2.5
-adaptivedof.exposureMax				2.5
+adaptivedof.exposureMax				5.5
 
 bokeh.brightnessThresholdMin			4.0
 bokeh.brightnessThresholdMax			3.0
@@ -1338,7 +1356,7 @@ bokeh.shapeExposureRangeMin				-3.0
 bokeh.shapeExposureRangeMax				1.0
 
 defaultmotionblur.enabled				1
-defaultmotionblur.strength			0.1
+defaultmotionblur.strength			0.05
 
 procObjects.minRadiusForHeightMap			0.4
 
@@ -1357,4 +1375,4 @@ fpv.motionblur.weight0 1.0
 fpv.motionblur.weight1 0.0
 fpv.motionblur.weight2 0.8
 fpv.motionblur.weight3 1.0
-fpv.motionblur.max.velocity 32.0
+fpv.motionblur.max.velocity 128.0
