@@ -6,7 +6,7 @@ _menuPool:Add(mainMenu)
 	_menuPool:MouseControlsEnabled(false)
 
 
-local Batches = {1,3,5,8,10,13,15}
+local Batches = {1,3,5,8,10,13,15,20}
 
 Citizen.CreateThread(function()
 	for i, file in ipairs(files) do
