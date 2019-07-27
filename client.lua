@@ -34,8 +34,14 @@ function GetSetVisualsettingsFile()
 end 
 
 function LoadVisualsettingsFile(file)
+	if not file then 
+		return false 
+	end
 	local settingsFile = LoadResourceFile(GetCurrentResourceName(), file)
-	
+	if settingsFile == nil then
+		print("^1Visualsettings file not found, what am i supposed to do here?^7")
+		return false
+	end
 	local lines = stringsplit(settingsFile, "\n")
 	print("Loading "..file)
 	local processedbatch = 0
@@ -64,5 +70,5 @@ end
 
 Citizen.CreateThread(function()
 	Wait(100)
-	--LoadVisualsettingsFile(GetSetVisualsettingsFile())
+	LoadVisualsettingsFile(GetSetVisualsettingsFile())
 end)

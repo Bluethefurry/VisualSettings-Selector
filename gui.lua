@@ -4,20 +4,12 @@ mainMenu = NativeUI.CreateMenu("Visualsettings", "~b~Visualsettings Selector")
 _menuPool:Add(mainMenu)
 _menuPool:ControlDisablingEnabled(false)
 _menuPool:MouseControlsEnabled(false)
-local MenuKey = GetConvarInt("vss_menukey",327) -- F5 for now because thats better than f1(?)
-
+local MenuKey = GetConvarInt("vss_menukey",170) -- F3 for now because thats better than f1(?)
 
 local Batches = {1,3,5,8,10,13,15,20}
 
 Citizen.CreateThread(function()
 	for i, file in ipairs(files) do
-		if not files[i].active then
-			if files[i].default then
-				files[i].active = true
-			else
-				files[i].active = false 
-			end
-		end
 		if file.label then
 			local newitem = NativeUI.CreateItem(file.label, "","")
 			file.item = newitem
