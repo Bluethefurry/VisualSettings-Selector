@@ -10,7 +10,6 @@ local MenuKey = GetConvarInt("vss_menukey",327) -- F5 for now because thats bett
 local Batches = {1,3,5,8,10,13,15,20}
 
 Citizen.CreateThread(function()
-	
 	for i, file in ipairs(files) do
 		if not files[i].active then
 			if files[i].default then
@@ -55,7 +54,6 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		Wait(1)
-		
 		if printLoading then
 			SetTextFont(1)
 			SetTextProportional(1)
