@@ -1,4 +1,5 @@
 # VisualSettings-Selector
+## Need Help or want to follow my releases? Join the Support Discord: https://discord.gg/UbsYrKx
 
 'Stream' Multiple visualsettings.dat from server to client, with a Selection GUI
 
