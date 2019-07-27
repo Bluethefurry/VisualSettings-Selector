@@ -2,8 +2,8 @@
 _menuPool = NativeUI.CreatePool()
 mainMenu = NativeUI.CreateMenu("Visualsettings", "~b~Visualsettings Selector")
 _menuPool:Add(mainMenu)
-	_menuPool:ControlDisablingEnabled(false)
-	_menuPool:MouseControlsEnabled(false)
+_menuPool:ControlDisablingEnabled(false)
+_menuPool:MouseControlsEnabled(false)
 
 
 local Batches = {1,3,5,8,10,13,15,20}
@@ -55,13 +55,13 @@ Citizen.CreateThread(function()
 		Wait(1)
 		
 		if printLoading then
-				SetTextFont(1)
-				SetTextProportional(1)
-				SetTextScale(0.0, 1.0)
-				SetTextOutline()
-				SetTextEntry("STRING")
-				AddTextComponentString("Loading Visualsettings...")
-				EndTextCommandDisplayText(0.4, 0.4)
+			SetTextFont(1)
+			SetTextProportional(1)
+			SetTextScale(0.0, 1.0)
+			SetTextOutline()
+			SetTextEntry("STRING")
+			AddTextComponentString("Loading Visualsettings...")
+			EndTextCommandDisplayText(0.4, 0.4)
 		end
 	end
 end)
