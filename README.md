@@ -1,6 +1,8 @@
 # VisualSettings-Selector
 'Stream' Multiple visualsettings.dat from server to client, with a Selection GUI
 
+![Demo](https://i.imgur.com/S37Hu3M.jpg)
+
 
 ## Todos
 - Remember current Timecyc
