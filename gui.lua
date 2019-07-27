@@ -4,11 +4,13 @@ mainMenu = NativeUI.CreateMenu("Visualsettings", "~b~Visualsettings Selector")
 _menuPool:Add(mainMenu)
 _menuPool:ControlDisablingEnabled(false)
 _menuPool:MouseControlsEnabled(false)
+local MenuKey = GetConvarInt("vss_menukey",327) -- F5 for now because thats better than f1(?)
 
 
 local Batches = {1,3,5,8,10,13,15,20}
 
 Citizen.CreateThread(function()
+	
 	for i, file in ipairs(files) do
 		if not files[i].active then
 			if files[i].default then
@@ -42,7 +44,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 		_menuPool:ProcessMenus()
-		if IsControlJustPressed(1, 288) then
+		if IsControlJustPressed(1, MenuKey) then
 			print(tostring(mainMenu:Visible() ))
 			mainMenu:Visible(not mainMenu:Visible())
 		end
